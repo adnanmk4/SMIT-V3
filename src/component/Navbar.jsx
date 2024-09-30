@@ -20,11 +20,14 @@ const Navbar = () => {
             <Link to="/team"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Team</p></Link>
             <Link to="/portfolio"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Portfolio</p></Link>
           </nav>
-          <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Button
-            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+          <Link to="/contact">
+            <button className="inline-flex items-center bg-gray-800 border-0 py-2 px-3 focus:outline-none text-base mt-4 md:mt-0 hover:bg-indigo-500 hover:text-white transition-all duration-300 rounded">
+              Get Ticket
+              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </Link>
         </div>
       </header>
     </div>
@@ -32,3 +35,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+  

@@ -1,19 +1,30 @@
 import React from 'react'
-import AppFolio from '../component/Folio'
 import Sponsors from '../component/Sponsers'
 import Footer from '../component/Footer';
+import FolioHero from '../component/FolioHero';
+import ContactUsed from '../component/ContactUsed';
+import AppPortfolio from '../component/Folio';
+import AppWork from '../component/work';
 
 
 const Portfolio = () => {
   return (
     <>
       <div>
-        <AppFolio />
-      </div>
-      <div>
+        <FolioHero />
+        <div>
+
+        <AppPortfolio />
+        </div>
+
         <Sponsors />
-      </div> <br />
-      <Footer />
+
+        <AppWork />
+        
+        <ContactUsed />
+        <Footer />
+
+      </div>
     </>
   )
 }

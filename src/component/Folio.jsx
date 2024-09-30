@@ -1,111 +1,60 @@
-'use client';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// Sample project data
-const projects = [
-    {
-        id: 1,
-        title: 'Project One',
-        description: 'An innovative project that solves problems effectively.',
-        image: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
-        link: '#',
-    },
-    {
-        id: 2,
-        title: 'Project Two',
-        description: 'A cutting-edge application that enhances user experience.',
-        image: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
-        link: '#',
-    },
-    {
-        id: 3,
-        title: 'Project Three',
-        description: 'A revolutionary tool designed to simplify complex tasks.',
-        image: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
-        link: '#',
-    },
-    {
-        id: 4,
-        title: 'Project Four',
-        description: 'An engaging platform that connects people seamlessly.',
-        image: 'https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg',
-        link: '#',
-    },
-    {
-        id: 4,
-        title: 'Project Four',
-        description: 'An engaging platform that connects people seamlessly.',
-        image: 'https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg',
-        link: '#',
-    },
-    {
-        id: 4,
-        title: 'Project Four',
-        description: 'An engaging platform that connects people seamlessly.',
-        image: 'https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg',
-        link: '#',
-    },
-];
-
-// AppPortfolio Component
-const AppPortfolio = () => {
+const AppPortFolio = () => {
     return (
-        <div className="container mx-auto px-4 py-10">
-            {/* Header Section */}
-            <header className="text-center mb-10">
-                <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-600">
-                    My Portfolio
-                </h1>
-                <p className="mt-4 text-lg text-gray-700 italic">Explore my work and passion projects.</p>
-            </header>
-            
-            {/* Projects Section */}
-            <section className="my-10">
-                <h2 className="text-4xl font-semibold text-gray-800 mb-6">Featured Projects</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project) => (
-                        <div key={project.id} className="group bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-500 hover:scale-105 hover:shadow-xl relative">
-                            <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                            <div className="p-4">
-                                <h3 className="font-semibold text-xl text-gray-800">{project.title}</h3>
-                                <p className="text-gray-600 mt-2">{project.description}</p>
-                                <a
-                                    href={project.link}
-                                    className="mt-4 inline-block text-indigo-600 font-semibold hover:text-indigo-800 transition duration-300 relative"
-                                >
-                                    View Project
-                                    <span className="absolute left-0 -bottom-1 w-full h-1 bg-indigo-600 transition-all duration-300 scale-x-0 group-hover:scale-x-100"></span>
-                                </a>
+        <>
+            <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-10">
+                <div className="container px-5 mx-auto">
+                    {/* Centered heading */}
+                    <h2 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 drop-shadow-md transition duration-500 hover:scale-105 hover:drop-shadow-lg mb-10">
+                        Our  Portfolio
+                    </h2>
+
+                    <div className="flex flex-wrap -m-4">
+                        {/* Card 1 */}
+                        {Array.from({ length: 6 }).map((_, index) => (
+                            <div className="w-full sm:w-1/2 lg:w-1/3 p-2" key={index}>
+                                <div className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border border-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl h-64 group">
+                                    <img
+                                        alt="gallery"
+                                        className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-110"
+                                        src="https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg"
+                                    />
+                                    <div className="absolute inset-0 bg-white bg-opacity-0 flex flex-col justify-center items-center transition-opacity duration-300 opacity-0 group-hover:bg-opacity-90 group-hover:opacity-100 p-6">
+                                        <h2 className="tracking-widest text-xs title-font font-medium text-indigo-600 mb-1">
+                                            THE SUBTITLE {index + 1}
+                                        </h2>
+                                        <h1 className="title-font text-2xl font-semibold text-gray-900 mb-2">
+                                            Project Title {index + 1}
+                                        </h1>
+                                        <p className="leading-relaxed mb-2 text-center text-sm">
+                                            Brief description of the project {index + 1}.
+                                        </p>
+                                        <Link
+                                            to="/details"
+                                            className="text-indigo-500 inline-flex items-center hover:text-indigo-700 transition duration-300 ease-in-out"
+                                        >
+                                            Learn More
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="w-4 h-4 ml-1 transition-transform transform group-hover:translate-x-1"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5-5 5M6 12h12" />
+                                            </svg>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </section>
-            
-            {/* Skills Section */}
-            <section className="my-10">
-                <h2 className="text-4xl font-semibold text-center text-gray-800 mb-6">Skills & Technologies</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {[
-                        { skill: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/javascript.svg' },
-                        { skill: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/react.svg' },
-                        { skill: 'CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/css3.svg' },
-                        { skill: 'Node.js', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/node-dot-js.svg' },
-                        { skill: 'MongoDB', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/mongodb.svg' },
-                        { skill: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/tailwindcss.svg' },
-                        { skill: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/javascript.svg' },
-                        { skill: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/react.svg' },
-                    ].map(({ skill, icon }) => (
-                        <div key={skill} className="bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 relative">
-                            <img src={icon} alt={skill} className="h-12 w-12 mb-2" />
-                            <h3 className="font-semibold text-lg text-gray-800 text-center">{skill}</h3>
-                            <span className="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-600 opacity-0 transition-opacity duration-300 hover:opacity-30"></span>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </div>
+        </>
     );
 };
 
-export default AppPortfolio;
+export default AppPortFolio;
