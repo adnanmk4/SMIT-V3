@@ -53,19 +53,7 @@ const GetTicket = () => {
                 />
               </div>
             </div>
-            <div className="p-2 w-full">
-              <div className="relative">
-                <label htmlFor="phone" className="leading-7 text-sm text-gray-700">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full bg-gray-100 bg-opacity-50 rounded-lg border border-gray-300 focus:border-indigo-600 focus:bg-white focus:ring-2 focus:ring-indigo-300 text-base outline-none text-gray-700 py-3 px-4 leading-8 transition-colors duration-300 ease-in-out hover:bg-gray-200"
-                />
-              </div>
-            </div>
+         
             <div className="p-2 w-full">
               <div className="relative">
                 <label htmlFor="event" className="leading-7 text-sm text-gray-700">
@@ -111,12 +99,12 @@ const GetTicket = () => {
             </div>
             <div className="p-2 w-full">
               <button className="flex mx-auto text-white bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-500 border-0 py-3 px-12 focus:outline-none hover:bg-indigo-600 rounded-full text-lg shadow-lg transition-transform duration-500 transform hover:scale-110 hover:shadow-2xl">
-                Confirm & Book Ticket
+                Generate Ticket
               </button>
             </div>
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
               <a href="mailto:support@tickets.com" className="text-indigo-500 hover:text-purple-600">
-                support@tickets.com
+                support@Smit.com
               </a><br /><br />
               <span className="inline-flex">
                 <a href="#" className="text-gray-500 hover:text-indigo-600 transition duration-200">

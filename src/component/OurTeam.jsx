@@ -78,7 +78,7 @@ const TeamSection = () => {
           {/* Team Member 3 */}
           <div className="p-4 lg:w-1/4 md:w-1/2" data-aos="fade-up" data-aos-delay="200">
             <div className="h-full flex flex-col items-center text-center">
-              <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/202x202" />
+              <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://www.lse.ac.uk/Mathematics/assets/images/ProfilePhotos/Ahmad-Abdi-200x200.jpg" />
               <div className="w-full">
                 <h2 className="title-font font-medium text-lg text-white">John Doe</h2>
                 <h3 className="text-gray-500 mb-3">Designer</h3>
@@ -107,7 +107,7 @@ const TeamSection = () => {
           {/* Team Member 4 */}
           <div className="p-4 lg:w-1/4 md:w-1/2" data-aos="fade-up" data-aos-delay="300">
             <div className="h-full flex flex-col items-center text-center">
-              <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://dummyimage.com/203x203" />
+              <img alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrISD3_lXhqhe75EKhwYAo9jYZAqAj7IhcQg&s" />
               <div className="w-full">
                 <h2 className="title-font font-medium text-lg text-white">Jane Smith</h2>
                 <h3 className="text-gray-500 mb-3">Backend Developer</h3>

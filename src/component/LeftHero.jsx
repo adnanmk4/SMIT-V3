@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import Lottie from 'react-lottie';
 import pic1 from '../assets/pic1.json';
 import pic2 from '../assets/pic2.webp';
@@ -12,7 +13,7 @@ const services = [
     description: "Custom web solutions that cater to your business needs.",
   },
   {
-    title: " App Development",
+    title: "App Development",
     subtitle: "Apps for Every Platform",
     description: "Creating responsive and user-friendly mobile applications.",
   },
@@ -100,9 +101,11 @@ const LeftHero = () => {
                       <p className="leading-relaxed mb-4 text-sm">
                         {service.description}
                       </p>
-                      <button className="bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600 transition duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                        Learn More
-                      </button>
+                      <Link to="/services"> {/* Link to services page */}
+                        <button className="bg-indigo-500 text-white py-1 px-3 rounded hover:bg-indigo-600 transition duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                          Learn More
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -112,9 +115,11 @@ const LeftHero = () => {
 
           {/* Call to Action Section */}
           <div className="flex justify-center mt-12">
-            <button className="bg-red-500 text-white py-3 px-6 rounded-full hover:bg-red-600 transition duration-200 shadow-lg transform hover:scale-105">
-              Join Us Today!
-            </button>
+            <Link to="/contact"> {/* Link to contact page */}
+              <button className="bg-red-500 text-white py-3 px-6 rounded-full hover:bg-red-600 transition duration-200 shadow-lg transform hover:scale-105">
+                Join Us Today!
+              </button>
+            </Link>
           </div>
         </div>
       </section>
