@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  // Function to toggle the dropdown
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <div className='sticky top-0 z-50'>
       <header className="text-gray-400 bg-gray-900 body-font">
@@ -13,12 +21,31 @@ const Navbar = () => {
             <Link to={'/'}><span className="ml-3 text-xl">Tailblocks</span></Link>
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <Link to="/"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Home</p></Link>
-            <Link to="/about"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">About</p></Link>
-            <Link to="/services"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Services</p></Link>
-            <Link to="/contact"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Contact</p></Link>
-            <Link to="/team"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Team</p></Link>
-            <Link to="/portfolio"><p className="mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300">Portfolio</p></Link>
+            <Link to="/" className={`${location.pathname === '/' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>Home</Link>
+            <Link to="/about" className={`${location.pathname === '/about' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>About</Link>
+            
+            {/* Dropdown for Services */}
+            <div className="relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+              <Link to="/services" className={`${location.pathname.startsWith('/services') ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300 flex items-center`}>
+                Services
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </Link>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-lg">
+                  <Link to="/web" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Devlopment</Link>
+                  <Link to="/services/development" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
+                  <Link to="/services/marketing" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
+                </div>
+              )}
+            </div>
+
+            <Link to="/contact" className={`${location.pathname === '/contact' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>Contact</Link>
+            <Link to="/team" className={`${location.pathname === '/team' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>Team</Link>
+            <Link to="/portfolio" className={`${location.pathname === '/portfolio' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>Portfolio</Link>
           </nav>
           <Link to="/contact">
             <button className="inline-flex items-center bg-gray-800 border-0 py-2 px-3 focus:outline-none text-base mt-4 md:mt-0 hover:bg-indigo-500 hover:text-white transition-all duration-300 rounded">
@@ -35,4 +62,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-  

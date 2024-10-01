@@ -8,6 +8,7 @@ import Portfolio from '../pages/Portfolio'
 import Team from '../pages/Team'
 import Navbar from '../component/Navbar'
 import NotFound from '../pages/NotFound'
+import Web from '../pages/Web'
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter = () => {
         <Route path='contact' element={<Contact />}/>
         <Route path='portfolio' element={<Portfolio />}/>
         <Route path='team' element={< Team/>}/>
+        <Route path='web' element={<Web />} />
         <Route path='*' element={< NotFound/>}/>
 
         </Routes>
