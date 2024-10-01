@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Aos from "aos";
 
 const AppWork = () => {
   return (
-    <section className="bg-gradient-to-r from-indigo-600 to-purple-700 py-20">
+    <section className="bg-gradient-to-r from-indigo-600 to-purple-700 py-20" data-aos={'fade-in'} >
       <div className="container mx-auto flex px-6">
         <div className="flex-1 flex justify-center items-center">
           <img

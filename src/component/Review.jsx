@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const reviews = [
   {
@@ -52,6 +54,10 @@ function StarRating({ rating }) {
 }
 
 export default function AppReview() {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
+
   return (
     <div className="bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 py-20">
       <div className="container mx-auto px-4">
@@ -63,6 +69,8 @@ export default function AppReview() {
             <div
               key={index}
               className="bg-white rounded-lg shadow-md p-6 text-center"
+              data-aos="fade-up" // AOS animation for entry
+              data-aos-duration="1000" // Duration of the animation
             >
               <img
                 src={review.avatar}

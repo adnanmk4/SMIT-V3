@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const sponsors = [
   { id: 1, name: 'Facebook', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png' },
@@ -18,6 +20,8 @@ function Sponsors() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    AOS.init({ duration: 1000 }); // Initialize AOS
+
     const interval = setInterval(() => {
       if (!isHovered) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % sponsors.length); // Loop back to the first sponsor
@@ -27,24 +31,29 @@ function Sponsors() {
     return () => clearInterval(interval); // Clean up on unmount
   }, [isHovered]);
 
+  // Duplicate sponsors for seamless scrolling
+  const displaySponsors = [...sponsors, ...sponsors];
+
   return (
     <div 
-      className="relative w-full overflow-hidden mt-12 py-8 bg-gray-50" // Added bg color and padding
+      className="relative w-full overflow-hidden mt-12 py-8 bg-gray-50" // Background color and padding
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="text-2xl text-center font-bold mb-4">Our Sponsors</h2><br /> {/* Title for the section */}
+      <h2 className="text-4xl text-center font-bold mb-8" data-aos="fade-up">Our Sponsors</h2> {/* Title with animation */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * (100 / 8)}%)` }} // Show 4 logos at a time
+        style={{ transform: `translateX(-${currentIndex * (100 / displaySponsors.length)}%)` }} // Show all logos
       >
-        {sponsors.map((sponsor) => (
-          <div key={sponsor.id} className="flex-shrink-0 w-1/4 mx-2"> {/* Reduced margin to bring logos closer */}
-            <img
-              src={sponsor.logo}
-              alt={sponsor.name}
-              className="w-20 h-20 mx-auto transition-transform duration-300 hover:scale-110" // Smaller size for images
-            />
+        {displaySponsors.map((sponsor) => (
+          <div key={sponsor.id} className="flex-shrink-0 w-1/4 mx-2" data-aos="zoom-in" data-aos-duration="1000"> {/* Animation for logos */}
+            <div className="bg-white shadow-lg rounded-lg p-4 transition-transform duration-300 hover:scale-105 flex justify-center items-center h-full"> {/* Card for each logo */}
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="w-24 h-24 mx-auto transition-transform duration-300 hover:scale-110" // Slightly larger image size
+              />
+            </div>
           </div>
         ))}
       </div>

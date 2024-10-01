@@ -6,10 +6,24 @@
 * {
     margin: 0;
     padding: 0;
+    font-size:large;
     box-sizing: border-box;
     font-family: sans-serif !important;
     text-decoration: none !important; /* Removes underline from links by default */
   }
+
+  /* Add this CSS to your styles */
+.sponsor-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.sponsor {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
   
   
   
