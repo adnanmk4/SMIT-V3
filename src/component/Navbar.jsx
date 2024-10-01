@@ -7,26 +7,40 @@ const Navbar = () => {
 
   // Function to toggle the dropdown
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    setDropdownOpen(prev => !prev);
+  };
+
+  // Function to handle mouse enter and leave for the dropdown
+  const handleMouseEnter = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownOpen(false);
   };
 
   return (
     <div className='sticky top-0 z-50'>
       <header className="text-gray-400 bg-gray-900 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+          {/* Changed <a> to <div> */}
+          <div className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
             <Link to={'/'}><span className="ml-3 text-xl">Tailblocks</span></Link>
-          </a>
+          </div>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <Link to="/" className={`${location.pathname === '/' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>Home</Link>
             <Link to="/about" className={`${location.pathname === '/about' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`}>About</Link>
             
             {/* Dropdown for Services */}
-            <div className="relative" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
-              <Link to="/services" className={`${location.pathname.startsWith('/services') ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300 flex items-center`}>
+            <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <Link 
+                to="/services" 
+                className={`${location.pathname.startsWith('/services') ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300 flex items-center`} 
+                onClick={toggleDropdown}
+              >
                 Services
                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -35,8 +49,8 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-lg">
-                  <Link to="/web" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Devlopment</Link>
+                <div className="absolute left-0 mt-1 w-48 bg-gray-800 shadow-lg rounded-lg">
+                  <Link to="/web" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Development</Link>
                   <Link to="/graphics" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
                   <Link to="/flutter" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
                 </div>
@@ -59,6 +73,6 @@ const Navbar = () => {
       </header>
     </div>
   );
-}
+};
 
 export default Navbar;

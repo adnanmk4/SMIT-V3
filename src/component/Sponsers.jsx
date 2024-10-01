@@ -10,9 +10,6 @@ const sponsors = [
   { id: 3, name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png' },
   { id: 4, name: 'Netflix', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Netflix_logo.svg/1024px-Netflix_logo.svg.png' },
   { id: 5, name: 'Spotify', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png' },
-  { id: 6, name: 'Facebook', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png' },
-  { id: 7, name: 'Google', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Google_logo_2015.svg/1024px-Google_logo_2015.svg.png' },
-  { id: 8, name: 'Microsoft', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1024px-Microsoft_logo.svg.png' },
 ];
 
 function Sponsors() {
@@ -32,7 +29,10 @@ function Sponsors() {
   }, [isHovered]);
 
   // Duplicate sponsors for seamless scrolling
-  const displaySponsors = [...sponsors, ...sponsors];
+  const displaySponsors = [...sponsors, ...sponsors].map((sponsor, index) => ({
+    ...sponsor,
+    uniqueId: `${sponsor.id}-${index}`, // Generate a unique key for duplicated items
+  }));
 
   return (
     <div 
@@ -46,7 +46,7 @@ function Sponsors() {
         style={{ transform: `translateX(-${currentIndex * (100 / displaySponsors.length)}%)` }} // Show all logos
       >
         {displaySponsors.map((sponsor) => (
-          <div key={sponsor.id} className="flex-shrink-0 w-1/4 mx-2" data-aos="zoom-in" data-aos-duration="1000"> {/* Animation for logos */}
+          <div key={sponsor.uniqueId} className="flex-shrink-0 w-1/4 mx-2" data-aos="zoom-in" data-aos-duration="1000"> {/* Animation for logos */}
             <div className="bg-white shadow-lg rounded-lg p-4 transition-transform duration-300 hover:scale-105 flex justify-center items-center h-full"> {/* Card for each logo */}
               <img
                 src={sponsor.logo}

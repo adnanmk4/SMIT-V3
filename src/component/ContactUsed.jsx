@@ -10,12 +10,12 @@ const ContactUsed = () => {
           </h2>
           <div className="flex flex-wrap justify-center -m-4 text-center">
             {[
-              { number: '2.7K', label: 'Users' },
-              { number: '1.8K', label: 'Subscribes' },
-              { number: '35', label: 'Downloads' },
-              { number: '4', label: 'Products' },
-            ].map((item, index) => (
-              <div key={index} className="p-2 sm:w-1/4 w-1/2">
+              { id: 1, number: '2.7K', label: 'Users' },
+              { id: 2, number: '1.8K', label: 'Subscribes' },
+              { id: 3, number: '35', label: 'Downloads' },
+              { id: 4, number: '4', label: 'Products' },
+            ].map((item) => (
+              <div key={item.id} className="p-2 sm:w-1/4 w-1/2">
                 <h2 className="title-font font-bold sm:text-4xl text-3xl text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-600">
                   {item.number}
                 </h2>

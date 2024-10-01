@@ -89,13 +89,11 @@ function AppHero() {
 
         {/* Dots Navigation */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex space-x-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-3 w-3 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-gray-400'} hover:scale-110 transition-all`}
-            />
-          ))}
+        {slides.map((slide, index) => (
+  <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}>
+    {/* Slide Content */}
+  </div>
+))}
         </div>
 
         {/* Autoplay Progress Bar */}

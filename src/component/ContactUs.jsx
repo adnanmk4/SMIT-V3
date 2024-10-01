@@ -122,7 +122,7 @@ const GetTicket = () => {
             </div>
           </form>
           <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <a href="mailto:support@tickets.com" className="text-indigo-500 hover:text-purple-600">support@Smit.com</a>
+            <span className="text-indigo-500 hover:text-purple-600">support@Smit.com</span>
           </div>
         </div>
       </div>
