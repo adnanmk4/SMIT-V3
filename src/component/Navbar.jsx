@@ -37,8 +37,8 @@ const Navbar = () => {
               {isDropdownOpen && (
                 <div className="absolute left-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-lg">
                   <Link to="/web" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Devlopment</Link>
-                  <Link to="/services/development" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
-                  <Link to="/services/marketing" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
+                  <Link to="/graphics" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
+                  <Link to="/flutter" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
                 </div>
               )}
             </div>

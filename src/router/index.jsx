@@ -9,6 +9,8 @@ import Team from '../pages/Team'
 import Navbar from '../component/Navbar'
 import NotFound from '../pages/NotFound'
 import Web from '../pages/Web'
+import Graphics from '../pages/Graphics'
+import Flutter from '../pages/Flutter'
 
 const AppRouter = () => {
   return (
@@ -23,9 +25,12 @@ const AppRouter = () => {
         <Route path='portfolio' element={<Portfolio />}/>
         <Route path='team' element={< Team/>}/>
         <Route path='web' element={<Web />} />
+        <Route path='graphics' element={<Graphics />} />
+        <Route path='flutter' element={<Flutter />} />
         <Route path='*' element={< NotFound/>}/>
 
         </Routes>
+
         </BrowserRouter>
 
     </div>
