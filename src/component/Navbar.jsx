@@ -5,12 +5,10 @@ const Navbar = () => {
   const location = useLocation();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  // Function to toggle the dropdown
   const toggleDropdown = () => {
     setDropdownOpen(prev => !prev);
   };
 
-  // Function to handle mouse enter and leave for the dropdown
   const handleMouseEnter = () => {
     setDropdownOpen(true);
   };
@@ -23,7 +21,6 @@ const Navbar = () => {
     <div className='sticky top-0 z-50'>
       <header className="text-gray-400 bg-gray-900 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          {/* Changed <a> to <div> */}
           <div className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -47,12 +44,20 @@ const Navbar = () => {
                 </svg>
               </Link>
 
-              {/* Dropdown Menu */}
+              {/* Full Screen Dropdown Menu with 6 items */}
               {isDropdownOpen && (
-                <div className="absolute left-0 mt-1 w-48 bg-gray-800 shadow-lg rounded-lg">
-                  <Link to="/web" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Development</Link>
-                  <Link to="/graphics" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
-                  <Link to="/flutter" className="block px-4 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
+                <div className="fixed top-16 left-0 w-full h-64 bg-gray-800 shadow-lg z-40 grid grid-cols-2 gap-10 p-8">
+                  <div className="flex flex-col">
+                    <Link to="/web" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">Web & App Development</Link>
+                    <Link to="/graphics" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">Graphic Designing</Link>
+                    <Link to="/flutter" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">Flutter</Link>
+                  </div>
+                  <div className="flex flex-col">
+                    <Link to="/seo" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">SEO Optimization</Link>
+                    <Link to="/digital-marketing" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">Digital Marketing</Link>
+                    <Link to="/consulting" className="block px-6 py-4 text-lg text-gray-300 hover:bg-indigo-500 hover:text-white">Consulting Services</Link>
+                    
+                  </div>
                 </div>
               )}
             </div>
