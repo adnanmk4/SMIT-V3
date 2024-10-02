@@ -2,6 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AppPortFolio = () => {
+    // Array of unique image URLs
+    const images = [
+        "https://media.dev.to/cdn-cgi/image/width=1600,height=900,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fz8a5wnnl0tqv589bgvdz.png",
+        "https://miro.medium.com/v2/resize:fit:1400/0*rgxBZQVyrT1iiLIA.png",
+        "https://www.cluemediator.com/wp-content/uploads/2020/12/output-integrate-stripe-payment-gateway-in-react-clue-mediator.gif",
+        "https://via.placeholder.com/400x250?text=Project+4",
+        "https://via.placeholder.com/400x250?text=Project+5",
+        "https://via.placeholder.com/400x250?text=Project+6",
+    ];
+
     return (
         <>
             <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-10">
@@ -13,13 +23,13 @@ const AppPortFolio = () => {
 
                     <div className="flex flex-wrap -m-4">
                         {/* Card 1 */}
-                        {Array.from({ length: 6 }).map((_, index) => (
+                        {Array.from({ length: images.length }).map((_, index) => (
                             <div className="w-full sm:w-1/2 lg:w-1/3 p-2" key={`portfolio-item-${index}`}>
                                 <div className="relative bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border border-gray-300 shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl h-64 group">
                                     <img
                                         alt={`Project ${index + 1}`}
                                         className="w-full h-full object-cover object-center transition duration-300 group-hover:scale-110"
-                                        src="https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg"
+                                        src={images[index]} // Using unique image for each card
                                     />
                                     <div className="absolute inset-0 bg-white bg-opacity-0 flex flex-col justify-center items-center transition-opacity duration-300 opacity-0 group-hover:bg-opacity-90 group-hover:opacity-100 p-6">
                                         <h2 className="tracking-widest text-xs title-font font-medium text-indigo-600 mb-1">

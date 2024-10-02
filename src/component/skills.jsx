@@ -8,25 +8,25 @@ const workItems = [
     id: 1,
     title: 'Web Development',
     description: 'Building responsive and user-friendly websites.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
+    imageUrl: 'https://xbsoftware.com/wp-content/uploads/2023/03/website-development-process-full-guide-1-fb.jpg',
   },
   {
     id: 2,
     title: 'Mobile Apps',
     description: 'Creating mobile applications with React Native',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
+    imageUrl: 'https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg',
   },
   {
     id: 3,
     title: 'UI/UX Design',
     description: 'Crafting intuitive user interfaces.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
+    imageUrl: 'https://segwitz.com/wp-content/uploads/2023/09/5757453-scaled-1.jpg',
   },
   {
     id: 4,
     title: 'E-commerce Solutions',
     description: 'Building robust e-commerce platforms.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/C4E0BAQGMkpd7khJwXA/company-logo_200_200/company-logo_200_200/0/1630443963930/jsgroupinternational_logo?e=2147483647&v=beta&t=mfovMkt0AqYjZzfCscTMAv1yzJxGENJdLzfZ9HvA1-Q',
+    imageUrl: 'https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/ecommerce.png',
   },
 ];
 
