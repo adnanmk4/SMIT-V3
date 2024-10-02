@@ -56,7 +56,7 @@ const Navbar = () => {
 
               {/* Wide Dropdown Menu with Sub-Services */}
               {isDropdownOpen && (
-                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-3 gap-10" data-aos="fade-up">
+                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-3 gap-10" data-aos="fade-down">
                   {/* Column 1 */}
                   <div>
                     <h3 className="text-white text-lg mb-2">Web & App Development</h3>
@@ -75,8 +75,8 @@ const Navbar = () => {
                   <div>
                     <h3 className="text-white text-lg mb-2">Digital Marketing</h3>
                     <Link to="/seo" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">SEO Optimization</Link>
-                    <Link to="/social-media" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Social Media Marketing</Link>
-                    <Link to="/ads" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Google Ads</Link>
+                    <Link to="/socialmedia" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Social Media Marketing</Link>
+                    <Link to="/googleAds" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Google Ads</Link>
                   </div>
                 </div>
               )}
