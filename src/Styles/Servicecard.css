@@ -1,0 +1,85 @@
+/* Style the card */
+.cardss {
+    position: relative;
+    overflow: hidden; /* Ensure that overflowing content is hidden */
+    border-radius: 15px;
+    transition: transform 0.3s ease; /* Smooth transition */
+    width: 100%; /* Ensure it takes full width in its parent */
+    height: 300px; /* Reduced height for a smaller card size */
+    max-width: 100%; /* Responsive for various screen sizes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Ensure the image fills the card */
+.cardss img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions for image effects */
+}
+
+/* Add blur effect on hover */
+.cardss:hover img {
+    filter: blur(5px); /* Apply blur effect on hover */
+}
+
+/* Title and description styling */
+.cardss .content {
+    position: absolute;
+    bottom: -100%; /* Start hidden below the card */
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6); /* Optional: dark background for better readability */
+    padding: 20px; /* Add padding for text */
+    color: white;
+    opacity: 0; /* Start hidden */
+    transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for slide and fade */
+    height: 100%; /* Ensure content occupies full card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+}
+
+/* Show text on hover */
+.cardss:hover .content {
+    bottom: 0; /* Slide the content up */
+    opacity: 1; /* Fade it in */
+}
+
+/* Ensure the title and description are visible */
+.cardss:hover .content h3, 
+.cardss:hover .content p {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Ensure text fades in smoothly */
+}
+
+/* Additional styling for the title */
+.cardss .content h3 {
+    font-size: 1.3rem; /* Slightly smaller font size for the title */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Styling for the description */
+.cardss .content p {
+    font-size: 0.9rem; /* Slightly smaller font size for the description */
+    margin: 0;
+}
+
+/* Flex properties for responsive grid layout */
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Ensure that all cards take equal space */
+.p-4 {
+    flex: 1 1 22%; /* Take up 22% width with flex for smaller cards */
+    margin: 10px; /* Add margin between cards */
+    min-width: 250px; /* Set a minimum width to ensure responsiveness */
+}

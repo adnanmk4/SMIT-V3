@@ -19,6 +19,8 @@
     "react-lottie": "^1.2.4",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.26.2",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.14.1"
   },
   "devDependencies": {
