@@ -7,7 +7,7 @@ const AppWork = () => {
       <div className="container mx-auto flex px-6">
         <div className="flex-1 flex justify-center items-center">
           <img
-            src="https://www.perfecto.io/sites/default/files/image/2019-06/image-blog-resolution-and-ppi-affect-test-coverage-600x400.jpg" // Replace with your image URL
+            src="https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2022/04/web-developer-portfolio.webp" // Replace with your image URL
             alt="Web Development"
             className="object-cover rounded-lg shadow-2xl transform transition duration-500 hover:scale-105"
           />
