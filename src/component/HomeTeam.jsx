@@ -14,7 +14,7 @@ const teamMembers = [
   { id: 1, name: 'Aliyan Sheikh', position: 'Lead Developer', description: 'Expert in full-stack development', image: pic2 },
   { id: 2, name: 'Zeshan Ijaz', position: 'Backend Developer', description: 'Specialized in Node.js and databases', image: pic3 },
   { id: 3, name: 'Wajid Ahmed', position: 'UI/UX Designer', description: 'Creating user-friendly designs', image: pic4 },
-  { id: 4, name: 'Abdullah Ahmed', position: 'Project Manager', description: 'Overseeing project execution and delivery', image: pic5 },
+  { id: 4, name: 'Fatima Khalil', position: 'Project Manager', description: 'Overseeing project execution ', image: pic5 },
 ];
 
 const TeamSection = () => {
