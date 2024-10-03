@@ -30,7 +30,7 @@ function AppHero() {
     if (isHovered) return // Stop autoplay if hovered
     const timer = setTimeout(() => {
       nextSlide()
-    }, 2000) // 3 seconds autoplay
+    }, 2000) 
 
     return () => clearTimeout(timer)
   }, [currentIndex, isHovered])

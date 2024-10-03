@@ -19,6 +19,14 @@ import Illustration from '../pages/Illustration'
 import Seo from '../pages/Seo'
 import SocialMedia from '../pages/SocialMedia'
 import GoogleAds from '../pages/GoogleAds'
+import Carear from '../pages/Carear'
+import JobLetter from '../pages/JobLetter'
+import UIdesigner from '../pages/UIdesigner'
+import Cto from '../pages/Cto'
+import Founder from '../pages/Founder'
+import Devops from '../pages/Devops'
+import Softwareengineer from '../pages/Softwareengineer'
+import QaaEngineer from '../pages/Qaaengineer'
 
 const AppRouter = () => {
   return (
@@ -42,6 +50,24 @@ const AppRouter = () => {
         <Route path='seo' element={<Seo />} />
         <Route path='socialmedia' element={<SocialMedia />} />
         <Route path='googleAds' element={<GoogleAds />} />
+        <Route path='carear' element={<Carear/>} />
+        <Route path='jobletter' element={<JobLetter/>} />
+
+        <Route path='uidesigner' element={<UIdesigner/>} />
+        <Route path='cto' element={<Cto/>} />
+        <Route path='founder' element={<Founder/>} />
+        <Route path='devops' element={<Devops/>} />
+        <Route path='softwareengineer' element={<Softwareengineer/>} />
+        <Route path='qaengineer' element={<QaaEngineer/>} />
+
+
+
+
+
+       
+
+
+
 
 
 
