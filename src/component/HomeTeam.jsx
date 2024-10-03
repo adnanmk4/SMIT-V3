@@ -73,8 +73,8 @@ const TeamSection = () => {
               <div
                 className="bg-black shadow-2xl border border-indigo-500 transform transition duration-500 hover:scale-105 hover:shadow-indigo-600 rounded-lg p-5 mx-5"
                 data-aos="flip-left"
-              >
-                <figure className="mr-5">
+              ><center>
+                    <figure className="mr-5">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -82,6 +82,13 @@ const TeamSection = () => {
                     data-aos="zoom-in"
                   />
                 </figure>
+
+              </center>
+
+              <br />
+               
+         
+                
                 <div className="cards-body">
                   <h3 className="cards-title text-2xl font-semibold text-white mb-1" data-aos="fade-right">{member.name}</h3>
                   <h4 className="text-lg text-gray-300 mb-2" data-aos="fade-left">{member.position}</h4>

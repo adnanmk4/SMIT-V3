@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
 
 const Navbar = () => {
   const location = useLocation();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [imageUrl, setImageUrl] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5XaPknTWTxdBcdC3r0_9blSi_8n3rD_2Xg&s'); // Default image
+
+  const UNSPLASH_API_KEY = 'OC1nfXOHm-yk-XWGO05G01ai4-1z_RE_RTrZSBcDCdU';
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Duration of the animations in milliseconds
-      once: true, // Whether animation should happen only once or every time you scroll
+      duration: 1000,
+      once: true,
     });
   }, []);
 
@@ -24,6 +28,29 @@ const Navbar = () => {
 
   const handleMouseLeave = () => {
     setDropdownOpen(false);
+  };
+
+  const fetchImage = async (query) => {
+    try {
+      const response = await axios.get(`https://api.unsplash.com/search/photos`, {
+        params: {
+          query,
+          client_id: UNSPLASH_API_KEY,
+        },
+      });
+      if (response.data.results.length > 0) {
+        setImageUrl(response.data.results[0].urls.small);
+      } else {
+        setImageUrl('https://via.placeholder.com/300x200?text=No+Image+Found');
+      }
+    } catch (error) {
+      console.error("Error fetching image:", error);
+      setImageUrl('https://via.placeholder.com/300x200?text=Error');
+    }
+  };
+
+  const handleServiceClick = (service) => {
+    fetchImage(service);
   };
 
   return (
@@ -40,13 +67,10 @@ const Navbar = () => {
             <Link to="/" className={`${location.pathname === '/' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up">Home</Link>
             <Link to="/about" className={`${location.pathname === '/about' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="100">About</Link>
 
-
-            
-            {/* Dropdown for Services */}
             <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-              <Link 
-                to="/services" 
-                className={`${location.pathname.startsWith('/services') ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300 flex items-center`} 
+              <Link
+                to="/services"
+                className={`${location.pathname.startsWith('/services') ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300 flex items-center`}
                 onClick={toggleDropdown}
                 data-aos="fade-up" data-aos-delay="200"
               >
@@ -56,29 +80,39 @@ const Navbar = () => {
                 </svg>
               </Link>
 
-              {/* Wide Dropdown Menu with Sub-Services */}
               {isDropdownOpen && (
-                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-3 gap-10" data-aos="fade-down">
-                  {/* Column 1 */}
-                  <div>
-                    <h3 className="text-white text-lg mb-2">Web & App Development</h3>
-                    <Link to="/web" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Web Development</Link>
-                    <Link to="/app" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">App Development</Link>
-                    <Link to="/ecommerce" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">E-commerce Solutions</Link>
+                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-4 gap-10" data-aos="fade-down">
+                  <div className="col-span-1">
+                    <img
+                      src={imageUrl}
+                      alt="Service"
+                      className="w-full h-auto rounded-lg"
+                      style={{ width: '300px', height: '200px', objectFit: 'cover' }}
+                    />
                   </div>
-                  {/* Column 2 */}
-                  <div>
-                    <h3 className="text-white text-lg mb-2">Graphic Designing</h3>
-                    <Link to="/logo" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Logo Design</Link>
-                    <Link to="/branding" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Branding</Link>
-                    <Link to="/illustration" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Illustration</Link>
-                  </div>
-                  {/* Column 3 */}
-                  <div>
-                    <h3 className="text-white text-lg mb-2">Digital Marketing</h3>
-                    <Link to="/seo" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">SEO Optimization</Link>
-                    <Link to="/socialmedia" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Social Media Marketing</Link>
-                    <Link to="/googleAds" className="block px-3 py-2 text-gray-300 hover:bg-indigo-500 hover:text-white">Google Ads</Link>
+
+                  <div className="col-span-3 grid grid-cols-3 gap-6">
+                    <div>
+                      <h3 className="text-white text-lg mb-2">Web & App Development</h3>
+                      <Link to="/web" onClick={() => handleServiceClick('web development')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Web Development</Link>
+                      <Link to="/app" onClick={() => handleServiceClick('app development')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">App Development</Link>
+                      <Link to="/ecommerce" onClick={() => handleServiceClick('ecommerce')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">E-commerce Solutions</Link>
+                    </div>
+
+                    <div>
+                      <h3 className="text-white text-lg mb-2">Graphic Designing</h3>
+                      <Link to="/logo" onClick={() => handleServiceClick('logo design')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Logo Design</Link>
+                      <Link to="/branding" onClick={() => handleServiceClick('branding')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Branding</Link>
+                      <Link to="/illustration" onClick={() => handleServiceClick('illustration')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Illustration</Link>
+                    </div>
+
+                    {/* New SEO Optimization Column */}
+                    <div>
+                      <h3 className="text-white text-lg mb-2">SEO Optimization</h3>
+                      <Link to="/softwareengineer" onClick={() => handleServiceClick('seo optimization')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Softwar-Eengineer</Link>
+                      <Link to="/devops" onClick={() => handleServiceClick('content creation')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Devops</Link>
+                      <Link to="/qaengineer" onClick={() => handleServiceClick('site audit')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Qaengineer</Link>
+                    </div>
                   </div>
                 </div>
               )}
@@ -88,15 +122,6 @@ const Navbar = () => {
             <Link to="/team" className={`${location.pathname === '/team' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="400">Team</Link>
             <Link to="/portfolio" className={`${location.pathname === '/portfolio' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="500">Portfolio</Link>
           </nav>
-          <Link to="/carear" className={`${location.pathname === '/about' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="100">Carear</Link>
-          <Link to="/contact">
-            <button className="inline-flex items-center bg-gray-800 border-0 py-2 px-3 focus:outline-none text-base mt-4 md:mt-0 hover:bg-indigo-500 hover:text-white transition-all duration-300 rounded" data-aos="fade-up" data-aos-delay="600">
-              Get Ticket
-              <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </Link>
         </div>
       </header>
     </div>
