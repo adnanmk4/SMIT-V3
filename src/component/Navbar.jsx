@@ -118,10 +118,20 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="/contact" className={`${location.pathname === '/contact' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="300">Contact</Link>
+            <Link to="/contact" className={`${location.pathname === '/contact' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="300">Contact</Link> 
             <Link to="/team" className={`${location.pathname === '/team' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="400">Team</Link>
             <Link to="/portfolio" className={`${location.pathname === '/portfolio' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="500">Portfolio</Link>
+     
+
           </nav>
+
+          <Link to="/carear" className={`${location.pathname === '/carear' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="500">Carear</Link>
+
+<Link to='/contact'>
+<button className='bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-500 transform hover:scale-105 transition duration-300 ease-in-out'>
+GET TICKET ➡
+</button>
+</Link>
         </div>
       </header>
     </div>
