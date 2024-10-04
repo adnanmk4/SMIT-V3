@@ -40,18 +40,18 @@ function Sponsors() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <h2 className="text-4xl text-center font-bold mb-8" data-aos="fade-up">Our Sponsors</h2> {/* Title with animation */}
+      <h2 className="text-2xl md:text-4xl text-center font-bold mb-8" data-aos="fade-up">Our Sponsors</h2> {/* Title with animation */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * (100 / displaySponsors.length)}%)` }} // Show all logos
       >
         {displaySponsors.map((sponsor) => (
-          <div key={sponsor.uniqueId} className="flex-shrink-0 w-1/4 mx-2" data-aos="zoom-in" data-aos-duration="1000"> {/* Animation for logos */}
+          <div key={sponsor.uniqueId} className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 mx-2" data-aos="zoom-in" data-aos-duration="1000"> {/* Animation for logos */}
             <div className="bg-white shadow-lg rounded-lg p-4 transition-transform duration-300 hover:scale-105 flex justify-center items-center h-full"> {/* Card for each logo */}
               <img
                 src={sponsor.logo}
                 alt={sponsor.name}
-                className="w-24 h-24 mx-auto transition-transform duration-300 hover:scale-110" // Slightly larger image size
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto transition-transform duration-300 hover:scale-110" // Slightly larger image size
               />
             </div>
           </div>

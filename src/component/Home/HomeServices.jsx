@@ -54,8 +54,8 @@ const HomeServices = () => {
       <section className="bg-gray-100 py-10">
         <div className="container px-5 mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="flex justify-between items-center mb-6">
-              <h2 data-aos="fade-up" className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 drop-shadow-md transition duration-500 hover:scale-105 hover:drop-shadow-lg">
+            <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+              <h2 data-aos="fade-up" className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 drop-shadow-md transition duration-500 hover:scale-105 hover:drop-shadow-lg mb-4 md:mb-0">
                 Our Services
               </h2>
 

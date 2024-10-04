@@ -37,13 +37,13 @@ const WhatWeWorkOn = () => {
 
   return (
     <div className="bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900 py-20">
-      <h2 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" data-aos="fade-up">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" data-aos="fade-up">
         What We Work On
       </h2>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-wrap -m-4">
           {workItems.map((item) => (
-            <div key={item.id} className="p-4 lg:w-1/4 md:w-1/2 sm:w-1/2 w-full" data-aos="zoom-in" data-aos-duration="1000">
+            <div key={item.id} className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="zoom-in" data-aos-duration="1000">
               <div className="relative bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col justify-between transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
                 <img className="w-full h-48 object-cover" src={item.imageUrl} alt={item.title} />
                 <div className="p-6 flex-grow">
