@@ -1,8 +1,8 @@
 import React from 'react'
-import Main from '../component/main'
-import LeftHero from '../component/LeftHero'
-import OurTeam from '../component/OurTeam'
-import Promo from '../component/Promo'
+import Main from '../component/About/Main'
+import LeftHero from '../component/About/LeftHero'
+import OurTeam from '../component/About/OurTeam'
+import Promo from '../component/About/Promo'
 import Footer from '../component/Footer'
 
 const About = () => {

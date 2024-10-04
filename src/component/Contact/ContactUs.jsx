@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import getrequest from '../Config/mongodb';
+import getrequest from '../../Config/mongodb';
 
 const GetTicket = () => {
   const [formData, setFormData] = useState({

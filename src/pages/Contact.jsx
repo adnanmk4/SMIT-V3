@@ -1,7 +1,7 @@
 import React from 'react'
-import ContactUs from '../component/ContactUs'
-import ContactMain from '../component/ContactMain'
-import ContactUsed from '../component/ContactUsed';
+import ContactUs from '../component/Contact/ContactUs'
+import ContactMain from '../component/Contact/ContactMain'
+import ContactUsed from '../component/Contact/ContactUsed';
 import Footer from '../component/Footer';
 
 

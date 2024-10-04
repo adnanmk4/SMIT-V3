@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import Earth from '../assets/Earth.json';
+import Earth from '../../assets/Earth.json';
 
 const CarearJoin = () => {
   return (

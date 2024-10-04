@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import Lottie from 'react-lottie';
-import pic1 from '../assets/pic1.json';
-import pic2 from '../assets/pic2.webp';
+import pic1 from '../../assets/pic1.json';
+import pic2 from '../../assets/pic2.webp';
 import AOS from 'aos'; // Import AOS library for animations
 import 'aos/dist/aos.css'; // Import AOS CSS
 

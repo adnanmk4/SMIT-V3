@@ -1,10 +1,10 @@
 import React from 'react'
 import Sponsors from '../component/Sponsers'
 import Footer from '../component/Footer';
-import FolioHero from '../component/FolioHero';
-import ContactUsed from '../component/ContactUsed';
-import AppPortfolio from '../component/Folio';
-import AppWork from '../component/work';
+import FolioHero from '../component/Portfolio/FolioHero';
+import ContactUsed from '../component/Contact/ContactUsed';
+import AppPortfolio from '../component/Portfolio/Folio';
+import AppWork from '../component/Home/work';
 
 
 const Portfolio = () => {

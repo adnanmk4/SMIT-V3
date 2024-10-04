@@ -1,11 +1,11 @@
 import React from 'react'
-import HomeServices from '../component/HomeServices'
-import AppHero from '../component/hero'
-import AppReview from '../component/Review'
+import HomeServices from '../component/Home/HomeServices'
+import AppHero from '../component/Home/Hero'
+import AppReview from '../component/Home/Review'
 import Sponsors from '../component/Sponsers'
-import WhatWeWorkOn from '../component/skills'
-import AppWork from '../component/work'
-import HomeTeam from '../component/HomeTeam'
+import WhatWeWorkOn from '../component/Home/skills'
+import AppWork from '../component/Home/work'
+import HomeTeam from '../component/Home/HomeTeam'
 import Footer from '../component/Footer';
 
 

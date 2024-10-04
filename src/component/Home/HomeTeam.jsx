@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import pic2 from '../assets/pic2.jpg';
-import pic3 from '../assets/pic3.png';
-import pic4 from '../assets/pic4.webp';
-import pic5 from '../assets/pic5.jpg';
+import pic2 from '../../assets/pic2.jpg';
+import pic3 from '../../assets/pic3.png';
+import pic4 from '../../assets/pic4.webp';
+import pic5 from '../../assets/pic5.jpg';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 

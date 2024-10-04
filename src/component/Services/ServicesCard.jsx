@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
-import '../Styles/Servicecard.css';
+import '../../Styles/Servicecard.css';
 
 const ServicesCard = () => {
   const [serviceList, setServiceList] = useState([]); // State to hold services data
