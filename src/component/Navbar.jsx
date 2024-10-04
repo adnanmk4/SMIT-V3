@@ -8,6 +8,8 @@ const Navbar = () => {
   const location = useLocation();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [imageUrl, setImageUrl] = useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5XaPknTWTxdBcdC3r0_9blSi_8n3rD_2Xg&s'); // Default image
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const UNSPLASH_API_KEY = 'OC1nfXOHm-yk-XWGO05G01ai4-1z_RE_RTrZSBcDCdU';
 
@@ -53,8 +55,32 @@ const Navbar = () => {
     fetchImage(service);
   };
 
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      if (window.scrollY > lastScrollY) {
+        // Scroll down
+        setShowNavbar(false);
+      } else {
+        // Scroll up
+        setShowNavbar(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <div className='sticky top-0 z-50'>
+    <div className={`sticky top-0 z-50 transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
       <header className="text-gray-400 bg-gray-900 body-font" data-aos="fade-down">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <div className="flex title-font font-medium items-center text-white mb-4 md:mb-0" data-aos="fade-right">
@@ -106,7 +132,6 @@ const Navbar = () => {
                       <Link to="/illustration" onClick={() => handleServiceClick('illustration')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Illustration</Link>
                     </div>
 
-                    {/* New SEO Optimization Column */}
                     <div>
                       <h3 className="text-white text-lg mb-2">SEO Optimization</h3>
                       <Link to="/softwareengineer" onClick={() => handleServiceClick('seo optimization')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Softwar-Eengineer</Link>
@@ -121,17 +146,15 @@ const Navbar = () => {
             <Link to="/contact" className={`${location.pathname === '/contact' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="300">Contact</Link> 
             <Link to="/team" className={`${location.pathname === '/team' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="400">Team</Link>
             <Link to="/portfolio" className={`${location.pathname === '/portfolio' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="500">Portfolio</Link>
-     
-
           </nav>
 
           <Link to="/carear" className={`${location.pathname === '/carear' ? 'text-white bg-indigo-500' : ''} mr-5 hover:text-white hover:bg-indigo-500 px-3 py-2 rounded transition-all duration-300`} data-aos="fade-up" data-aos-delay="500">Carear</Link>
 
-<Link to='/contact'>
-<button className='bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-500 transform hover:scale-105 transition duration-300 ease-in-out'>
-GET TICKET ➡
-</button>
-</Link>
+          <Link to='/contact'>
+            <button className='bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:from-pink-500 hover:to-purple-500 transform hover:scale-105 transition duration-300 ease-in-out'>
+              GET TICKET ➡
+            </button>
+          </Link>
         </div>
       </header>
     </div>
