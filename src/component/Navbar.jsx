@@ -53,6 +53,7 @@ const Navbar = () => {
 
   const handleServiceClick = (service) => {
     fetchImage(service);
+    setDropdownOpen(false); // Close the dropdown when a service is clicked
   };
 
   const controlNavbar = () => {
@@ -107,7 +108,7 @@ const Navbar = () => {
               </Link>
 
               {isDropdownOpen && (
-                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-4 gap-10" data-aos="fade-down">
+                <div className="fixed top-16 left-0 w-full bg-gray-800 shadow-lg z-40 p-8 grid grid-cols-1 md:grid-cols-4 gap-10 animate-fadeIn" data-aos="fade-down">
                   <div className="col-span-1">
                     <img
                       src={imageUrl}
@@ -117,7 +118,7 @@ const Navbar = () => {
                     />
                   </div>
 
-                  <div className="col-span-3 grid grid-cols-3 gap-6">
+                  <div className="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                       <h3 className="text-white text-lg mb-2">Web & App Development</h3>
                       <Link to="/web" onClick={() => handleServiceClick('web development')} className="block px-3 py-2 text-gray-300 hover:text-indigo-500">Web Development</Link>
@@ -156,7 +157,7 @@ const Navbar = () => {
             </button>
           </Link>
         </div>
-      </header>
+      </header> 
     </div>
   );
 };
