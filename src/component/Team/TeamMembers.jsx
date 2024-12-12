@@ -77,7 +77,7 @@ const TeamMembers = () => {
             Meet our amazing team, each member brings unique skills and experience to the table.
           </p>
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
           {teamMembers.map((member) => (
             <div className="p-2" data-aos="fade-up" data-aos-delay={member.delay} key={member.name}>
               <div className="h-full flex flex-col items-center text-center bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-500 hover:scale-105 hover:shadow-xl relative">
